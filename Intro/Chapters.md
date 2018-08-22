@@ -258,3 +258,83 @@ Na debugování se používá, inspector DOMu a CSS, který mají všechny moder
 (**F12** v Chrome)
 
 * Css validator: http://jigsaw.w3.org/css-validator/
+
+### Podpora browseru
+IE6 naštestí už nikdo nepoužívá. Existuje spousta CSS properties, které tento browser nepodporuje. I tak existují CSS styly, které nepodporují všechny browsery.
+
+Seznam s podporou nejpoužívanějších browserů: https://www.w3schools.com/cssref/css3_browsersupport.asp
+
+Pokud chceme konkrétní CSS  na více browserech:
+https://caniuse.com
+
+Demo scrollbaru:
+https://jsfiddle.net/qxd51r6b/22/
+(funguje na Chrome, nechunguje na Edge)
+
+### LESS, SASS (SCSS)
+* **LE**aner **S**tyle **S**heets
+* **S**yntactically **A**awesome **S**tyle **S**heet
+
+CSS je jednoduchý jazyk, který má jisté nedostatky, hlavně pro velké projekty.
+LESS a SASS jsou nadstavby (preprocesory), které se snaží překonat některé nevýhody. Rozšiřují tedy CSS o některé mechanismy, které známe z jiných programovacích jazyků.
+
+Přinášejí:
+* **Proměnné**
+
+    *SCSS* :
+    ```scss
+    $primary-color: #3bbfce;
+    $margin: 16px;
+
+    .content-navigation {
+        border-color: $primary-color;
+        color: darken($primary-color, 10%);
+    }
+
+    .border {
+        padding: $margin / 2;
+        margin: $margin / 2;
+        border-color: $primary-color;
+    }
+    ```
+    *LESS* :
+    ```less
+    @primary-color: #4D926F;
+
+    #header {
+        color: @primary-color;
+    }
+    h2 {
+        color: @primary-color;
+    }
+    ```
+* **Makra (Mixiny)**
+    *LESS* :
+    ```less
+    @the-border: 1px;
+    .rounded_corners (@radius: 5px) {
+        -moz-border-radius: @radius;
+        -webkit-border-radius: @radius;
+        border-radius: @radius;
+    }
+    #header {
+        color: @base-color * 3;
+        border-left: @the-border;
+        border-right: @the-border * 2;
+        .rounded_corners;
+    }
+    #footer {
+        .rounded_corners(10px);
+    }
+    ```
+* **Cykly**
+* **aj.**
+
+Kód napsáný v těchto nadstavbách je potom skompilovaný do CSS, které se normálně vkládá do HTML stránky.
+
+# Angular CLI
+https://cli.angular.io
+
+### ng new
+* style option:
+https://github.com/angular/angular-cli/wiki/new
