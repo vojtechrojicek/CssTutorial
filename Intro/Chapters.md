@@ -104,7 +104,7 @@ body {
     ```
 2. External\
     CSS je uloženo do samostatného .css souboru a ten je nalinkovaný v hlavičce stránky.\
-    *style.css*:
+    *style.css* :
     ``` css
     p {
         color: red;
@@ -113,7 +113,7 @@ body {
         color: blue;
     }
     ```
-    index.html:
+    *index.html* :
     ``` html
     <!DOCTYPE html>
     <html>
@@ -140,7 +140,7 @@ selector {
 ```
 ``` css
 h1 {
-  colour: blue;
+  color: blue;
   background-color: yellow;
   border: 1px solid black;
 }
@@ -155,7 +155,7 @@ https://1drv.ms/b/s!AntfQL3PCtMjgap8tHqtyJbYTNVq2Q
 
 ``` css
 h1 {
-  colour: blue !important;
+  color: blue !important;
   background-color: yellow !important;
   border: 1px solid black !important;
 }
