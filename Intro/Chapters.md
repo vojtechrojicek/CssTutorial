@@ -76,8 +76,6 @@ body {
 * Jak to funguje:
 ![Image of css](https://raw.githubusercontent.com/vojtechrojicek/CssTutorial/master/Intro/Assets/css.png)
 
-* Css validator: http://jigsaw.w3.org/css-validator/
-
 ### Aplikace CSS v HTML
 1. Inline\
     CSS se vlkádá přímo do HTML pomocí *style* atributu.
@@ -103,7 +101,8 @@ body {
     ...
     ```
 2. External\
-    CSS je uloženo do samostatného .css souboru a ten je nalinkovaný v hlavičce stránky.\
+    CSS je uloženo do samostatného .css souboru a ten je nalinkovaný v hlavičce stránky.
+
     *style.css* :
     ``` css
     p {
@@ -130,7 +129,7 @@ body {
 * Properties\
     Lidsky čitelný identifikátor vlastnosti, kterou nastavujeme (font, width,...).
 * Value\
-    Konkrétní hodnota na, kterou chceme property nastavit.
+    Konkrétní hodnota na kterou chceme property nastavit.
 
 ``` css
 selector {
@@ -146,13 +145,104 @@ h1 {
 }
 ```
 ### CSS cheatsheet
-TODO:
-https://1drv.ms/b/s!AntfQL3PCtMjgap8tHqtyJbYTNVq2Q
+https://github.com/vojtechrojicek/CssTutorial/blob/master/Intro/Assets/css-cheat-sheet-v2.pdf
 
-### Classy, ID, 
+
+### Třídy (class), Identifikátory (ID)
+* Vlastní **selectory**, které si můžeme definovat.
+* Je to super, pokud máme stejný design pro více HTML prvků.
+* ID - Může být jen **jeden** element na celé stránce se stejným ID. Začíná "*#*"
+* Class - Na stránce může být libovolný počet elementů. Začíná "*.*"
+
+*CSS soubor může vypadat např* :
+```css
+#top {
+    background-color: #ccc;
+    padding: 20px
+}
+
+.intro {
+    color: red;
+    font-weight: bold;
+}
+```
+*HTML* :
+```html
+<div id="top">
+    <h1>About dogs</h1>
+    <p class="intro">Dogs are the best.</p>
+    <p class="intro">Or maybe not?</p>
+</div>
+```
+### Složená deklarace (grouping) a kontextová deklarace (nesting)
+* Grouping\
+    Použitím "*,*" můžete jednoduše přiřadit stejnou property více elementům.
+    ```css
+    h2 {
+        color: red;
+    }
+    .class1 {
+        color: red;
+    }
+    .class2 {
+        color: red;
+    }
+    ```
+    ```css
+    h2, .class1, .class2 {
+        color: red;
+    }
+    ```
+* Nesting\
+    Slouží k vyselektování elementu uvnitř jiného elementu.
+    ```css
+    #top {
+        background-color: #ccc;
+        padding: 1em
+    }
+    #top h1 {
+        color: red;
+    }
+    #top p {
+        color: blue;
+        font-weight: bold;
+    }
+    ```
+    ```html
+    <div id="top">
+        <h1>This header will be red.</h1>
+        <p>This paragraph will be blue.</p>
+        <p>This one will be blue too.</p>
+    </div>
+    <h1>Without syle</h1>
+    ```
+
+### Který selector se použije na element?
+```html
+<div>
+    <p>Some text.</p>
+</div>
+```
+* Pokud jsou selectory **stejné**, použije se **poslední**:
+    ```css
+    p { color: red }
+    p { color: blue } /*paragraph bude modrý*/
+    ```
+* Pokud selectory **nejsou stejné**, použije se ten, který **přesnejí určuje element**:
+    ```css
+    div p { color: red } /*paragraph bude červeny*/
+    p { color: blue }
+    ```
+    Na výpočet priority, který určuje zdali se použije daný styl, existují pravidla:
+    * *p* -  má prioritu **1** (1 HTML selector)
+    * *div p* - má prioritu **2** (2 HTML selectory, 1+1)
+    * *.tree* - má prioritu **10** (1 class selector)
+    * *div p.tree* - má prioritu **12** (2 HTML selectory + class selector, 1+1+10)
+    * *#top* - má prioritu **100** (1 id selector)
+    * *body #content .alternative p* - má prioritu **112** (HTML selector + id selector + class selector + HTML selector, 1+100+10+1)
 
 ### Important
-
+Když chci, aby nějaká deklarace převládla, dá se použít klíčové slovo "*!important*". Taková deklarace potom nebude přepsána žádnou pozdější.
 ``` css
 h1 {
   color: blue !important;
@@ -160,3 +250,11 @@ h1 {
   border: 1px solid black !important;
 }
 ```
+
+### CSS a debugování
+Pokud je deklarace nevalidní (chyba v syntaxi, browser nepodporuje dané CSS,...), browser dané CSS prostě ignoruje. Nevalidní selector, nevybere žádný element a také neaplikuje svoje property.
+
+Na debugování se používá, inspector DOMu a CSS, který mají všechny moderní browsery.
+(**F12** v Chrome)
+
+* Css validator: http://jigsaw.w3.org/css-validator/
