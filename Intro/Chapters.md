@@ -57,10 +57,11 @@ HTML5 lze definovat encoding - <meta charset="utf-8">
 * API pomocí kterého můžeme přistupovat k jednotlivým objektum HTML stránky. (Elemnty, tagy, attributy, ...)
 * Pomocí JavaScriptu můžeme na konkrétní místo přidat nebo odebrat jakýkoliv obsah.
 * K dokumentu zde přistupujeme jako ke stromu. Každý element je nodem.
-- [] Add Image with DOM
+![Image of css](https://raw.githubusercontent.com/vojtechrojicek/CssTutorial/master/Intro/Assets/DOM-model.png)
+
 
 ### HTML cheatsheet
-- [ ] Add gitHub link to this: https://1drv.ms/b/s!AntfQL3PCtMjgap4Mr1WzpyeYHk_Nw
+https://github.com/vojtechrojicek/CssTutorial/blob/master/Intro/Assets/html5-che
 
 # **C**ascading **S**tyle **S**heets
 * Používá se na designování webu
@@ -73,7 +74,8 @@ body {
 ```
 * V CSS píšeme seznam pravidel, která jsou potom uplatněna na HTML dokument.
 * Jak to funguje:
-[] Add Image with CSS
+![Image of css](https://raw.githubusercontent.com/vojtechrojicek/CssTutorial/master/Intro/Assets/css.png)
+
 * Css validator: http://jigsaw.w3.org/css-validator/
 
 ### Aplikace CSS v HTML
@@ -144,6 +146,7 @@ h1 {
 }
 ```
 ### CSS cheatsheet
+TODO:
 https://1drv.ms/b/s!AntfQL3PCtMjgap8tHqtyJbYTNVq2Q
 
 ### Classy, ID, 
