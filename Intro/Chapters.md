@@ -336,5 +336,16 @@ Kód napsáný v těchto nadstavbách je potom skompilovaný do CSS, které se n
 https://cli.angular.io
 
 ### ng new
+* *ng new css-test --routing*
+    * Globalní styly pro celou aplikaci jsou ve *style.css*
+    * Každý komponent má vlastní styly
+
+### ng new - scss
 * style option:
-https://github.com/angular/angular-cli/wiki/new
+    * https://github.com/angular/angular-cli/wiki/new
+    * --style: default 'css', ('css', 'less' nebo 'scss')
+
+* *ng new scss-test --style=scss --routing*
+* *ng generate component home*
+    * Vygeneruje **sccs** pro komponentu, pokud byl projekt vytvořený jako scss
+    * Ruční definování stylu: *ng generate component home-scss --style=scss*
