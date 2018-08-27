@@ -340,6 +340,8 @@ https://cli.angular.io
     * Globalní styly pro celou aplikaci jsou ve *style.css*
     * Každý komponent má vlastní styly
 
+Viz. demo
+
 ### ng new - scss
 * style option:
     * https://github.com/angular/angular-cli/wiki/new

@@ -1,0 +1,86 @@
+<div class="content">
+  <h1>Beginner CSS tutorial</h1>
+  <div class="chapter">
+    <h2>Barvy</h2>
+    <p>V CSS existuje 16 777 216 barev, které můžeme použít. Definovat je lze vícero způsoby:</p>
+    <ul>
+      <li>
+          <p>Jménem:</p>
+        <handy-syntax-highlighter [language]="'css'" [content]="'
+.color-1 {
+  color: red;
+  background-color: blue;
+}'"></handy-syntax-highlighter>
+        <p>Ukázka: <span class="color-1">CSS beginner colors</span></p>
+      </li>
+      <li>
+        <p>RGB:</p>
+        <p>Kdy udáváme množství červené, zelené a modré buďto číslem v rozsahu 0-255 nebo %.</p>
+        <handy-syntax-highlighter [language]="'css'" [content]="'
+.color-2 {
+  color: rgb(255,0,0);
+  background-color: rgb(0%,0%,100%);
+}'"></handy-syntax-highlighter>
+        <p>Ukázka: <span class="color-2">CSS beginner colors</span></p>
+      </li>
+      <li>
+          <p>RGBA:</p>
+        <p>Dané RGB barvě se dá také nastavit čtvrý parametr - průhlednost 0-1;</p>
+        <handy-syntax-highlighter [language]="'css'" [content]="'
+.color-3 {
+  color: rgb(0,0,0, 0.3);
+  background-color: rgb(0,0,255, 0.3);
+}'"></handy-syntax-highlighter>
+        <p>Ukázka: <span class="color-3">CSS beginner colors</span></p>
+      </li>
+      <li>
+          <p>Hexadecimal:</p>
+        <handy-syntax-highlighter [language]="'css'" [content]="'
+.color-4 {
+  background-color: #f5f2f0;
+}'"></handy-syntax-highlighter>
+        <p>Ukázka: <span class="color-4">CSS beginner colors</span></p>
+      </li>
+    </ul>
+  </div>
+  <div class="chapter">
+      <h2>Text</h2>
+      <h4>Písmo</h4>
+      <ul>
+        <li>
+          <p>font-family:</p>
+          <p>Nastaví font textu. Béžné hodnoty: Times New Roman, Arial, Verdana, ...</p>
+          <p>Pokud nastavíme více hodnot, použije se první font, který browser najde v PC uživatele:</p>
+          <handy-syntax-highlighter [language]="'css'" [content]="'
+body {
+  font-family: arial, helvetica, serif;
+}'"></handy-syntax-highlighter>
+        </li>
+        <li>
+          <p>font-size:</p>
+          <p>Velikost písma. Lze použít více jednotek: px, pt, %,..</p>
+        </li>
+      </ul>
+      <h4>Tučnost, kurzíva, ...</h4>
+      <ul>
+          <li>
+            <p>font-weight:</p>
+            <p>Určuje zdali je text tučně nebo ne. Hodnoty: normal, bold, 100,200,300,...,900</p>
+          </li>
+          <li>
+            <p>font-style:</p>
+            <p>Určuje zdali je text kurzivou nebo ne.</p>
+          </li>
+          <li>
+            <p>text-decoration:</p>
+
+          </li>
+          <li>
+            <p>text-transform:</p>
+          </li>
+          <li>
+            <p>Text spacing:</p>
+          </li>
+        </ul>
+  </div>
+</div>
