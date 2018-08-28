@@ -18,7 +18,7 @@ Nejpouživanější tag v HTML. Je to **blokový** element, který se používá
 Další užitečný element, který je na rozdíl od `div` **inline**. Dá se dat např okolo slova v textu a nastavit mu nějakou vlastnost přes CSS (barva, tučnost, ...).
 
 ## Box Model
-Každý HTML element je v podstatě obdelníkový "box", kterému môžeme nastavovat vlstnosti pomocí CSS. 
+Každý HTML element je v podstatě obdelníkový "box", kterému môžeme nastavovat vlastnosti pomocí CSS. 
 
 ![Image of box-model](https://raw.githubusercontent.com/vojtechrojicek/CssTutorial/master/Beginners/Assets/box-model.png)
 
@@ -60,6 +60,66 @@ Každý HTML element je v podstatě obdelníkový "box", kterému môžeme nasta
     margin-bottom: 5px;
     margin-left: 1px;
     ```
+
+## CSS - pozicování
+Existují dva naprosto odlišné druhy pozicování.
+* Absolutní\
+    Umístí objekt do stránky na udané souřadnice bez ohledu na okolní text.
+* Relativní\
+    Určuje pouze, o kolik se má objekt posunout oproti své normální poloze.
+```css
+position:(absolute|relative); 
+[top: velikost]; 
+[left: velikost]; 
+...
+[z-index: číslo];
+```
+*Position má i další hodnoty: fixed, static,... Nejsou ovšem tak použivané.*
+### Z-index
+Protože při přesouvání objektů může dojít k překryvu, existuje vlastnost určující, který objekt bude navrchu. Default `z-index: 0;`. Čím vyšší číslo, tím více nahoťe element bude.
+
+### Overflow - přetečení
+Aby bylo co "přetékat", HTML objekt (nejlépe asi `<div>`) musí mít stylem nastavenou výšku, šířku nebo oboje.
+* text, který se nevejde, prostě oříznout, skrýt (`overflow: hidden`)
+* nechat kolem elementu zobrazit scroll-bar (`overflow: scroll`)
+* scroll-bar zapnout, jen když je to potřeba (`overflow: auto`)
+* nebránit tomu a nechat to přetékat (bez hodnoty nebo `overflow: visible`)
+
+## Selectory
+* Jednoduché selectory\
+    Přímo ukauji na element nebo skupinu elementu pomocí tagu, classy nebo id
+    ```css
+    p {
+        color: red;
+    }
+    #header {
+        color: blue;
+    }
+    ```
+* Attributové selektory
+    Vybírají element na základě jeho attributu. Název atributu se píše do `[]`.
+    * `[attr]` - Vybere element s daným attributem ať je jeho hodnota jakákoliv
+    * `[attr=val]` - Vybere element, pokud se jeho hodnota rovná "val".
+    * `[attr~=val]` - Vybere element, pokud jeho hodnota obsahuje i "val".
+    ```html
+    <ul>
+        <li data-quantity="1kg" data-vegetable>Tomatoes</li>
+        <li data-quantity="optional 10ml" data-vegetable="liquid">Olive oil</li>
+        <li data-quantity="700g" data-vegetable="not spicy like chili">Red pepper</li>
+    </ul>
+    ```
+    ```css
+    [data-vegetable] {
+        color: green;
+    }
+    [data-vegetable="liquid"] {
+        background-color: goldenrod;
+    }
+    [data-vegetable~="spicy"] {
+        color: red;
+    }
+    ```
+
 ## Barvy
 V CSS existuje 16 777 216 barev, které můžeme použít. Definovat je lze vícero způsoby:
 * Jménem
@@ -117,7 +177,7 @@ V CSS existuje 16 777 216 barev, které můžeme použít. Definovat je lze víc
 * **text-decoration**\
     Nakreslí tenkou čáru nad, pod nebo přes text.
     * *underline* - podtrhne text
-    * *overline * - čára nad textem
+    * *overline* - čára nad textem
     * *line-through* - čára přes text
 
 * **text-transform**\
