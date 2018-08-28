@@ -141,7 +141,7 @@ Aby bylo co "přetékat", HTML objekt (nejlépe asi `<div>`) musí mít stylem n
         text-decoration: none;
     }
     ```
-* Kombinace a spojování selectorů
+* Kombinace a spojování selectorů\
     Používat jenom 1 selector, se časem stane nepraktické a je lepší je spojovat.
     * `A, B` - Element který obsahuje A a/nebo B selector.
         ```css
