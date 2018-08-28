@@ -18,12 +18,48 @@ Nejpouživanější tag v HTML. Je to **blokový** element, který se používá
 Další užitečný element, který je na rozdíl od `div` **inline**. Dá se dat např okolo slova v textu a nastavit mu nějakou vlastnost přes CSS (barva, tučnost, ...).
 
 ## Box Model
-Každý HTML element je v podstatě obdelníkový "box", kterému môžeme nastavovat vlstnosti pomocí CSS.
-Skládá se s vlastností: `display, position, float, margin, padding`.
+Každý HTML element je v podstatě obdelníkový "box", kterému môžeme nastavovat vlstnosti pomocí CSS. 
 
 ![Image of box-model](https://raw.githubusercontent.com/vojtechrojicek/CssTutorial/master/Beginners/Assets/box-model.png)
 
-
+* **width** a **height**\
+    Šířka a výška obsahu - ten může obsahovat text nebo další vnořené elementy.\
+    Lze nastavit také obecnější `min-width, max-width, min-height, max-height`
+* **padding**\
+    Vnitřní prostor mezi okrajem(border) a obsahem(content) elementu.
+    ```css
+    padding: 5px 1px 5px 1px;
+    ```
+    ```css
+    padding: 5px 1px;
+    ```
+    ```css
+    padding-top: 5px;
+    padding-right: 1px;
+    padding-bottom: 5px;
+    padding-left: 1px;
+    ```
+* **border**\
+    Okraj je default nastavený na 0. Což lze pomocí css změnit několika způsoby
+    * `border: 1px solid black` - nastaví všechny běžné vlastnosti celému okraji
+    * `border-top, border-right, border-bottom, border-left` - šířka jednotlivých hran
+    * `border-width, border-style, border-color`- styly hran
+    * `border-top-width, border-top-style, border-top-color` - lze nastavit pro každou hranu zvlášť
+* **margin**\
+    Vnější prostor mezi okrajem(border) a jiným elementem.\
+    Pokud jsou vedle sebe 2 elementy s marginem - použije se větší hodnota s obou.
+    ```css
+    margin: 5px 1px 5px 1px;
+    ```
+    ```css
+    margin: 5px 1px;
+    ```
+    ```css
+    margin-top: 5px;
+    margin-right: 1px;
+    margin-bottom: 5px;
+    margin-left: 1px;
+    ```
 ## Barvy
 V CSS existuje 16 777 216 barev, které můžeme použít. Definovat je lze vícero způsoby:
 * Jménem
