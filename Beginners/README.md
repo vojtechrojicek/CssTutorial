@@ -76,7 +76,7 @@ position:(absolute|relative);
 ```
 *Position má i další hodnoty: fixed, static,... Nejsou ovšem tak použivané.*
 ### Z-index
-Protože při přesouvání objektů může dojít k překryvu, existuje vlastnost určující, který objekt bude navrchu. Default `z-index: 0;`. Čím vyšší číslo, tím více nahoťe element bude.
+Protože při přesouvání objektů může dojít k překryvu, existuje vlastnost určující, který objekt bude navrchu. Default `z-index: 0;`. Čím vyšší číslo, tím více nahoře element bude.
 
 ### Overflow - přetečení
 Aby bylo co "přetékat", HTML objekt (nejlépe asi `<div>`) musí mít stylem nastavenou výšku, šířku nebo oboje.
@@ -96,7 +96,7 @@ Aby bylo co "přetékat", HTML objekt (nejlépe asi `<div>`) musí mít stylem n
         color: blue;
     }
     ```
-* Attributové selektory
+* Attributové selektory\
     Vybírají element na základě jeho attributu. Název atributu se píše do `[]`.
     * `[attr]` - Vybere element s daným attributem ať je jeho hodnota jakákoliv
     * `[attr=val]` - Vybere element, pokud se jeho hodnota rovná "val".
@@ -119,6 +119,52 @@ Aby bylo co "přetékat", HTML objekt (nejlépe asi `<div>`) musí mít stylem n
         color: red;
     }
     ```
+* Pseudo-classy\
+    V CSS jsou pseudo-classy speciální slovíčka, která se píší `selector:pseudo-class`. Daný styl se vykoná jedině když je pseudo-classa aktivní. Existuje asi 40 pseudo-class, např:
+    * active
+    * checked
+    * enabled / disabled
+    * hover - pokud uživatel najede na element myškou
+    * ...: https://www.w3schools.com/css/css_pseudo_classes.asp
+    ```css
+    a {
+        color: blue;
+        font-weight: bold;
+    }
+    a:visited {
+        color: blue;
+    }
+    a:hover,
+    a:active,
+    a:focus {
+        color: darkred;
+        text-decoration: none;
+    }
+    ```
+* Kombinace a spojování selectorů
+    Používat jenom 1 selector, se časem stane nepraktické a je lepší je spojovat.
+    * `A, B` - Element který obsahuje A a/nebo B selector.
+        ```css
+        html, body {
+            color: black;
+        }
+        ```
+    * `A B` - Element, kdy B je potomek A (kterýkoliv)
+        ```html
+        <div>
+            <p>
+                <span>Červený text</span>
+            </p>
+        </div>
+        ```
+        ```css
+        div span {
+            color: red;
+        }
+        ```
+    * `A > B`- Element, kdy B je *přímý* potomek A
+    * `A + B` - Element, kdy B je *následující* sourozenec A (B je následující dítě stejného otce jako A).
+    * `A ~ B` - Element, kdy B je jakýkoliv sourozenec A.
 
 ## Barvy
 V CSS existuje 16 777 216 barev, které můžeme použít. Definovat je lze vícero způsoby:
