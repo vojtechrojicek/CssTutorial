@@ -1,5 +1,5 @@
 Upravte style.css aby stránka vypadala takto:
-![Image of css](https://raw.githubusercontent.com/vojtechrojicek/CssTutorial/master/Begginers/Assignments/3-color,fonts/final.png)
+![Image of css](https://github.com/vojtechrojicek/CssTutorial/blob/master/Beginners/Assignments/3-colors%2Cfonts/final.png)
 
 * 1. Texty zarovnat na střed
 * 2. h2 
